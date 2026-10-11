@@ -1,0 +1,990 @@
+
+/* =========================
+   1. BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f0;
+    color: #263b30;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =========================
+   2. HEADER AND NAVIGATION
+========================= */
+
+.topbar {
+    min-height: 76px;
+    padding: 17px 6%;
+    background: #174c38;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #174c38;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: #dcebe0;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.month-badge {
+    border: 1px solid #6d9c81;
+    border-radius: 30px;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   3. MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #38815a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.welcome h1 {
+    color: #1b4432;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 9px;
+}
+
+.welcome-text {
+    color: #77847a;
+    font-size: 14px;
+}
+
+.month-select {
+    width: 190px;
+    flex-shrink: 0;
+}
+
+.month-select label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+/* =========================
+   4. INPUTS
+========================= */
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #dce5dc;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #263b30;
+    font-size: 13px;
+}
+
+input::placeholder {
+    color: #a0aaa2;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #a7cbb2;
+    border-color: #39815b;
+}
+
+/* =========================
+   5. SUMMARY CARDS
+========================= */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 26px;
+}
+
+.summary-card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e3eae0;
+    border-radius: 15px;
+    padding: 22px 20px;
+    box-shadow: 0 5px 18px #24452d08;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px #24452d12;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #174c38, #28734e);
+    color: #ffffff;
+    border-color: #174c38;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-top > span:first-child {
+    color: #78857b;
+    font-size: 13px;
+}
+
+.balance-card .card-top > span:first-child {
+    color: #dcebe0;
+}
+
+.icon-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: #e6f2e8;
+    color: #28734e;
+    font-weight: bold;
+}
+
+.balance-card .icon-circle {
+    background: #ffffff20;
+    color: #ffffff;
+}
+
+.income-icon {
+    background: #e2f4e8;
+    color: #278451;
+}
+
+.expense-icon {
+    background: #fce8e5;
+    color: #c24e43;
+}
+
+.savings-icon {
+    background: #fbf1dc;
+    color: #aa7b24;
+}
+
+.summary-card h2 {
+    margin: 18px 0 7px;
+    font-size: clamp(19px, 2vw, 26px);
+    overflow-wrap: anywhere;
+}
+
+.summary-card > p {
+    color: #849087;
+    font-size: 11px;
+}
+
+.balance-card > p {
+    color: #dcebe0;
+}
+
+.green {
+    color: #278451;
+}
+
+.red {
+    color: #c95145;
+}
+
+.gold {
+    color: #b1872f;
+}
+
+/* =========================
+   6. PANELS AND HEADINGS
+========================= */
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #e2e9df;
+    border-radius: 15px;
+    padding: 26px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 16px #24452d06;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 23px;
+}
+
+.section-heading h2,
+.panel > h2 {
+    color: #234331;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.heading-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.green-bg {
+    background: #e5f3e8;
+    color: #28734e;
+}
+
+.red-bg {
+    background: #fce9e6;
+    color: #c95145;
+}
+
+.subtle-label {
+    background: #eff5ec;
+    color: #4d7258;
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.muted {
+    color: #839087;
+    font-size: 13px;
+}
+
+/* =========================
+   7. INCOME AND EXPENSE FORMS
+========================= */
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.two-column .panel {
+    margin-bottom: 25px;
+}
+
+.two-column .section-heading {
+    margin-bottom: 20px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #405648;
+}
+
+.two-column form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 17px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.btn-green {
+    background: #23734e;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background: #174c38;
+}
+
+.btn-red {
+    background: #c95145;
+    color: #ffffff;
+}
+
+.btn-red:hover {
+    background: #a83d33;
+}
+
+.two-column form > button {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 2px;
+}
+
+/* =========================
+   8. EXPENSE CATEGORIES
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.category-card {
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid #e5ece1;
+    background: #fbfcf9;
+    border-radius: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.category-card:hover {
+    border-color: #9fc4a8;
+    transform: translateY(-2px);
+}
+
+.category-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.category-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #edf4e9;
+    font-size: 21px;
+}
+
+.category-percent {
+    color: #6e7f70;
+    background: #edf3e9;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.category-card > p {
+    color: #728075;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.category-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #264833;
+    overflow-wrap: anywhere;
+}
+
+.progress-track {
+    height: 8px;
+    background: #e8eee5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #3d8b60;
+    border-radius: 20px;
+}
+
+.category-card:nth-child(2) .progress-fill {
+    background: #d4a74e;
+}
+
+.category-card:nth-child(3) .progress-fill {
+    background: #759bc7;
+}
+
+.category-card:nth-child(4) .progress-fill {
+    background: #9a80c5;
+}
+
+.category-card:nth-child(5) .progress-fill {
+    background: #5b9b98;
+}
+
+.category-card:nth-child(6) .progress-fill {
+    background: #d98c79;
+}
+
+/* =========================
+   9. MONTHLY BUDGET
+========================= */
+
+.budget-overview {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.budget-overview > div {
+    padding: 19px;
+    border-radius: 12px;
+    background: #f5f8f1;
+    border: 1px solid #e6ece2;
+}
+
+.budget-overview p {
+    font-size: 12px;
+    color: #77847a;
+    margin-bottom: 8px;
+}
+
+.budget-overview h2 {
+    font-size: 23px;
+    overflow-wrap: anywhere;
+}
+
+.budget-progress {
+    padding: 22px;
+    border: 1px solid #e4ebe0;
+    border-radius: 12px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.large-track {
+    height: 11px;
+}
+
+.budget-progress > p {
+    margin-top: 12px;
+}
+
+.budget-form,
+.goal-form {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e9eee6;
+}
+
+.budget-form h3,
+.goal-form h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.budget-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: end;
+}
+
+.budget-inputs > button {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+/* =========================
+   10. SAVINGS GOALS
+========================= */
+
+.goal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.goal-card {
+    padding: 22px;
+    border: 1px solid #e3eae0;
+    border-radius: 13px;
+    background: #fcfdfb;
+}
+
+.goal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.goal-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #f7f0df;
+    font-size: 22px;
+}
+
+.goal-status {
+    color: #368157;
+    background: #e7f4e9;
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.goal-card h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.goal-card > .muted {
+    margin-bottom: 18px;
+}
+
+.goal-amounts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.goal-amounts strong {
+    font-size: 19px;
+}
+
+.goal-amounts span {
+    font-size: 12px;
+    color: #7b887d;
+}
+
+.goal-percent {
+    color: #51815e;
+    font-size: 12px;
+    margin-top: 9px;
+}
+
+/* =========================
+   11. FINANCIAL REPORTS
+========================= */
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.report-card {
+    padding: 21px;
+    border-radius: 12px;
+    background: #f6f8f2;
+    border: 1px solid #e4eae0;
+}
+
+.report-card p {
+    font-size: 12px;
+    color: #77847a;
+    margin-bottom: 10px;
+}
+
+.report-card h3 {
+    font-size: 23px;
+    overflow-wrap: anywhere;
+    margin-bottom: 5px;
+}
+
+.report-card span {
+    font-size: 11px;
+    color: #8b968d;
+}
+
+.chart-heading {
+    font-size: 16px;
+    margin: 30px 0 15px;
+}
+
+.chart {
+    height: 245px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    gap: 16px;
+    padding: 20px 10px 12px;
+    border-bottom: 1px solid #dce6db;
+    background: linear-gradient(to bottom, #ffffff, #fafcf8);
+}
+
+.chart-column {
+    flex: 1;
+    min-width: 0;
+    max-width: 95px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 7px;
+    text-align: center;
+    color: #708073;
+    font-size: 11px;
+}
+
+.bar-value {
+    font-size: 10px;
+    color: #536b59;
+    overflow-wrap: anywhere;
+}
+
+.chart-bar {
+    width: 65%;
+    max-width: 52px;
+    min-height: 5px;
+    border-radius: 7px 7px 0 0;
+    background: #3d8b60;
+}
+
+.bar-one { height: 70%; }
+.bar-two { height: 42%; }
+.bar-three { height: 56%; }
+.bar-four { height: 28%; }
+.bar-five { height: 56%; }
+.bar-six { height: 28%; }
+
+.bar-two { background: #d4a74e; }
+.bar-three { background: #759bc7; }
+.bar-four { background: #9a80c5; }
+.bar-five { background: #5b9b98; }
+.bar-six { background: #d98c79; }
+
+/* =========================
+   12. SETTINGS
+========================= */
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid #e8ede5;
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+}
+
+.settings-row strong {
+    font-size: 13px;
+}
+
+.settings-row .muted {
+    margin-top: 4px;
+}
+
+.setting-value {
+    flex-shrink: 0;
+    background: #edf4e9;
+    color: #426c4c;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* =========================
+   13. FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px 15px 15px;
+    color: #7c897f;
+    font-size: 12px;
+}
+
+.footer-logo {
+    color: #285b3d;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* =========================
+   14. TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 1000px) {
+    .topbar {
+        padding: 18px 4%;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container {
+        padding: 26px 18px;
+    }
+}
+
+/* =========================
+   15. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 650px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13px;
+        padding: 18px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .month-badge {
+        align-self: flex-start;
+    }
+
+    .container {
+        padding: 22px 13px;
+    }
+
+    .welcome {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+
+    .month-select {
+        width: 100%;
+    }
+
+    .summary {
+        gap: 11px;
+    }
+
+    .summary-card {
+        padding: 17px 13px;
+    }
+
+    .summary-card h2 {
+        font-size: 19px;
+    }
+
+    .summary-card > p {
+        font-size: 10px;
+    }
+
+    .icon-circle {
+        width: 29px;
+        height: 29px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .panel {
+        padding: 20px 15px;
+        margin-bottom: 19px;
+    }
+
+    .two-column form {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .category-card {
+        padding: 14px 11px;
+    }
+
+    .category-card h3 {
+        font-size: 18px;
+    }
+
+    .category-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .budget-overview {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .budget-overview h2 {
+        font-size: 21px;
+    }
+
+    .budget-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-inputs > button {
+        grid-column: auto;
+    }
+
+    .goal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+    .subtle-label {
+        font-size: 9px;
+    }
+
+    .chart {
+        gap: 7px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .chart-column {
+        font-size: 10px;
+    }
+
+    .bar-value {
+        font-size: 9px;
+    }
+
+    .settings-row {
+        align-items: flex-start;
+    }
+}
